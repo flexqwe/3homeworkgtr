@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abdusalom Akbarov | Portfolio</title>
 
-    <!-- Google Fonts: Space Grotesk & Inter -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
@@ -14,11 +14,10 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     <style>
-        /* ==================== GLOBAL VARIABLES ==================== */
         :root {
             --bg-dark: #0a0a0c;
-            --accent-primary: #00f2ff; /* Cyan Neon */
-            --accent-secondary: #7000ff; /* Purple Neon */
+            --accent-primary: #00f2ff;
+            --accent-secondary: #7000ff;
             --text-main: #f8fafc;
             --text-dim: #94a3b8;
             --glass: rgba(255, 255, 255, 0.03);
@@ -27,7 +26,6 @@
             --ease: cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* ==================== RESET & BASE ==================== */
         * {
             margin: 0;
             padding: 0;
@@ -36,9 +34,7 @@
             scroll-behavior: smooth;
         }
 
-        h1, h2, h3, .logo {
-            font-family: 'Space Grotesk', sans-serif;
-        }
+        h1, h2, h3, .logo { font-family: 'Space Grotesk', sans-serif; }
 
         body {
             background-color: var(--bg-dark);
@@ -53,13 +49,10 @@
             padding: 0 1.5rem;
         }
 
-        /* ==================== DYNAMIC BACKGROUND ==================== */
+        /* Dynamic Background */
         .bg-mesh {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0; width: 100%; height: 100%;
             z-index: -1;
             background:
                 radial-gradient(circle at 10% 20%, rgba(0, 242, 255, 0.05) 0%, transparent 40%),
@@ -70,20 +63,17 @@
             position: fixed;
             width: 400px;
             height: 400px;
-            background: radial-gradient(circle, rgba(0, 242, 255, 0.05) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(0, 242, 255, 0.07) 0%, transparent 70%);
             border-radius: 50%;
             pointer-events: none;
             z-index: -1;
             transform: translate(-50%, -50%);
-            transition: 0.1s linear;
+            transition: 0.05s linear;
         }
 
-        /* ==================== HEADER ==================== */
         header {
             position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
+            top: 0; width: 100%; z-index: 1000;
             padding: 1.5rem 0;
             transition: 0.4s var(--ease);
         }
@@ -107,6 +97,7 @@
             background: var(--gradient-main);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            text-decoration: none;
         }
 
         .nav-links {
@@ -125,20 +116,13 @@
             letter-spacing: 1px;
         }
 
-        .nav-links a:hover {
-            color: var(--accent-primary);
-        }
+        .nav-links a:hover { color: var(--accent-primary); }
 
-        /* ==================== HERO SECTION ==================== */
         .hero {
             height: 100vh;
             display: flex;
             align-items: center;
             position: relative;
-        }
-
-        .hero-inner {
-            max-width: 800px;
         }
 
         .badge {
@@ -151,14 +135,12 @@
             font-weight: 600;
             color: var(--accent-primary);
             margin-bottom: 1.5rem;
-            letter-spacing: 1px;
         }
 
         .hero h1 {
-            font-size: clamp(3rem, 8vw, 5rem);
-            line-height: 1;
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            line-height: 1.1;
             margin-bottom: 1.5rem;
-            font-weight: 700;
         }
 
         .hero p {
@@ -179,47 +161,30 @@
             border-radius: 12px;
             font-weight: 600;
             transition: 0.3s;
-            box-shadow: 0 10px 30px -10px rgba(112, 0, 255, 0.4);
+            border: none;
+            cursor: pointer;
         }
 
         .btn-main:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 40px -10px rgba(0, 242, 255, 0.5);
+            box-shadow: 0 15px 40px -10px rgba(0, 242, 255, 0.4);
         }
 
-        /* ==================== SECTIONS ==================== */
-        section {
-            padding: 120px 0;
-        }
+        section { padding: 100px 0; }
 
-        .section-header {
-            margin-bottom: 4rem;
-        }
-
-        .section-header h2 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-
+        .section-header { margin-bottom: 3rem; }
         .line {
-            width: 60px;
-            height: 4px;
+            width: 60px; height: 4px;
             background: var(--gradient-main);
             border-radius: 2px;
+            margin-top: 10px;
         }
 
-        /* ==================== ABOUT GRID ==================== */
         .about-grid {
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
             gap: 4rem;
             align-items: center;
-        }
-
-        .about-content p {
-            color: var(--text-dim);
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
         }
 
         .stats {
@@ -234,14 +199,12 @@
             border: 1px solid var(--glass-border);
             border-radius: 24px;
             text-align: center;
+            transition: 0.3s;
         }
 
-        .stat-box h4 {
-            font-size: 2rem;
-            color: var(--accent-primary);
-        }
+        .stat-box:hover { border-color: var(--accent-primary); }
+        .stat-box h4 { font-size: 2.2rem; color: var(--accent-primary); }
 
-        /* ==================== SKILLS ==================== */
         .skills-container {
             display: flex;
             flex-wrap: wrap;
@@ -261,17 +224,9 @@
             transition: 0.3s;
         }
 
-        .skill-pill:hover {
-            background: var(--glass);
-            border-color: var(--accent-primary);
-            color: var(--accent-primary);
-            transform: scale(1.05);
-        }
-
-        /* ==================== SERVICE CARDS ==================== */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
         }
 
@@ -281,57 +236,51 @@
             border: 1px solid var(--glass-border);
             border-radius: 32px;
             transition: 0.4s var(--ease);
-            position: relative;
-            overflow: hidden;
         }
 
         .card:hover {
+            transform: translateY(-10px);
             background: rgba(255, 255, 255, 0.06);
-            border-color: rgba(255, 255, 255, 0.2);
-            transform: translateY(-12px);
         }
 
         .card i {
             font-size: 3rem;
             margin-bottom: 1.5rem;
+            display: inline-block;
             background: var(--gradient-main);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        /* ==================== CONTACT FORM ==================== */
         .contact-wrapper {
             background: var(--glass);
             border: 1px solid var(--glass-border);
             border-radius: 40px;
-            padding: 4rem;
+            padding: 3rem;
             display: grid;
             grid-template-columns: 1fr 1.5fr;
-            gap: 4rem;
+            gap: 3rem;
         }
 
         .contact-form input, .contact-form textarea {
             width: 100%;
             padding: 1.2rem;
-            background: rgba(0, 0, 0, 0.2);
+            background: rgba(0, 0, 0, 0.3);
             border: 1px solid var(--glass-border);
             border-radius: 16px;
             color: #fff;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             outline: none;
-            transition: 0.3s;
         }
 
         .contact-form input:focus, .contact-form textarea:focus {
             border-color: var(--accent-primary);
-            background: rgba(0, 0, 0, 0.4);
         }
 
-        /* ==================== ANIMATIONS ==================== */
         .reveal {
             opacity: 0;
-            transform: translateY(40px);
-            transition: 1s var(--ease);
+            transform: translateY(30px);
+            transition: 0.8s var(--ease);
         }
 
         .reveal.active {
@@ -339,13 +288,10 @@
             transform: translateY(0);
         }
 
-        /* ==================== RESPONSIVE ==================== */
         @media (max-width: 968px) {
-            .about-grid, .contact-wrapper {
-                grid-template-columns: 1fr;
-            }
-            .hero h1 { font-size: 3.5rem; }
+            .about-grid, .contact-wrapper { grid-template-columns: 1fr; }
             .nav-links { display: none; }
+            .contact-wrapper { padding: 2rem; }
         }
     </style>
 </head>
@@ -369,7 +315,7 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-inner">
-                <span class="badge">PROFEESIONAL PORTFOLIO</span>
+                <span class="badge">PROFESSIONAL PORTFOLIO</span>
                 <h1>Assalomu alaykum, men <span style="color: var(--accent-primary)">Abdusalom</span></h1>
                 <p>Men 12 yoshli ijodkor va dasturchiman. 6-sinfda o'qiyman, lekin kelajak texnologiyalarini bugundan o'rganishni tanladim.</p>
                 <a href="#contact" class="btn-main">Loyiha boshlash <i class='bx bx-right-arrow-alt'></i></a>
@@ -392,27 +338,15 @@
                         <div class="skill-pill"><i class='bx bxl-javascript'></i> JavaScript</div>
                         <div class="skill-pill"><i class='bx bxl-html5'></i> HTML5</div>
                         <div class="skill-pill"><i class='bx bxl-css3'></i> CSS3</div>
-                        <div class="skill-pill"><i class='bx bxl-react'></i> React (O'rganmoqda)</div>
+                        <div class="skill-pill"><i class='bx bxl-react'></i> React</div>
                         <div class="skill-pill"><i class='bx bx-palette'></i> Digital Art</div>
                     </div>
                 </div>
                 <div class="stats reveal">
-                    <div class="stat-box">
-                        <h4>12</h4>
-                        <p>Yoshim</p>
-                    </div>
-                    <div class="stat-box">
-                        <h4>15+</h4>
-                        <p>Loyihalar</p>
-                    </div>
-                    <div class="stat-box">
-                        <h4>6</h4>
-                        <p>Sinf</p>
-                    </div>
-                    <div class="stat-box">
-                        <h4>2</h4>
-                        <p>Yil tajriba</p>
-                    </div>
+                    <div class="stat-box"><h4>12</h4><p>Yoshim</p></div>
+                    <div class="stat-box"><h4>15+</h4><p>Loyihalar</p></div>
+                    <div class="stat-box"><h4>6</h4><p>Sinf</p></div>
+                    <div class="stat-box"><h4>2</h4><p>Yil tajriba</p></div>
                 </div>
             </div>
         </div>
@@ -438,7 +372,7 @@
                 <div class="card reveal">
                     <i class='bx bx-brush'></i>
                     <h3>Creative Art</h3>
-                    <p>Rasm chizish qobiliyatim orqali saytlar uchun o'ziga xos ranglar palitrasini tanlayman.</p>
+                    <p>Rasm chizish qobiliyatim orqali saytlar uchun o'ziga xos dizaynlar yarataman.</p>
                 </div>
             </div>
         </div>
@@ -449,18 +383,20 @@
             <div class="contact-wrapper reveal">
                 <div class="contact-text">
                     <h2>Keling, gaplashamiz!</h2>
-                    <p style="margin: 1.5rem 0; color: var(--text-dim);">Loyihangiz yoki savollaringiz bo'lsa, xabar qoldiring. Men tez orada javob beraman.</p>
-                    <div style="display: flex; gap: 1rem; margin-top: 2rem;">
-                        <a href="#" style="font-size: 1.5rem; color: var(--text-main);"><i class='bx bxl-telegram'></i></a>
-                        <a href="#" style="font-size: 1.5rem; color: var(--text-main);"><i class='bx bxl-instagram'></i></a>
-                        <a href="#" style="font-size: 1.5rem; color: var(--text-main);"><i class='bx bxl-github'></i></a>
+                    <p style="margin: 1.5rem 0; color: var(--text-dim);">Loyihangiz yoki savollaringiz bo'lsa, xabar qoldiring.</p>
+                    <div style="display: flex; gap: 1.5rem; margin-top: 2rem;">
+                        <a href="#" style="font-size: 1.8rem; color: var(--text-main);"><i class='bx bxl-telegram'></i></a>
+                        <a href="#" style="font-size: 1.8rem; color: var(--text-main);"><i class='bx bxl-instagram'></i></a>
+                        <a href="#" style="font-size: 1.8rem; color: var(--text-main);"><i class='bx bxl-github'></i></a>
                     </div>
                 </div>
-                <form class="contact-form" id="contactForm">
-                    <input type="text" placeholder="Ismingiz" required>
-                    <input type="email" placeholder="Elektron pochta" required>
-                    <textarea placeholder="Loyihangiz haqida..." rows="5" required></textarea>
-                    <button type="submit" class="btn-main" style="border: none; width: 100%; cursor: pointer;">
+
+                <form id="contactForm" action="{% url 'contact' %}" method="POST" class="contact-form">
+                    {% csrf_token %}
+                    <input type="text" name="name" placeholder="Ismingiz" required>
+                    <input type="email" name="email" placeholder="Elektron pochta" required>
+                    <textarea name="information" placeholder="Loyihangiz haqida..." rows="5" required></textarea>
+                    <button type="submit" class="btn-main" style="width: 100%;">
                         Xabar yuborish
                     </button>
                 </form>
@@ -468,23 +404,23 @@
         </div>
     </section>
 
-    <footer style="padding: 4rem 0; text-align: center; border-top: 1px solid var(--glass-border);">
+    <footer style="padding: 3rem 0; text-align: center; border-top: 1px solid var(--glass-border);">
         <p style="color: var(--text-dim)">&copy; 2026 Abdusalom Akbarov. Hamma huquqlar himoyalangan.</p>
     </footer>
 
     <script>
         // Header Scroll Effect
         const navbar = document.getElementById('navbar');
-        window.onscroll = () => {
-            if (window.scrollY > 100) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
                 navbar.classList.add('scrolled');
             } else {
                 navbar.classList.remove('scrolled');
             }
             reveal();
-        };
+        });
 
-        // Custom Cursor Glow
+        // Mouse Glow Effect
         const glow = document.getElementById('glow');
         document.addEventListener('mousemove', (e) => {
             glow.style.left = e.clientX + 'px';
@@ -493,25 +429,33 @@
 
         // Scroll Reveal Animation
         function reveal() {
-            var reveals = document.querySelectorAll(".reveal");
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 150;
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
+            const reveals = document.querySelectorAll(".reveal");
+            reveals.forEach(el => {
+                const windowHeight = window.innerHeight;
+                const elementTop = el.getBoundingClientRect().top;
+                if (elementTop < windowHeight - 100) {
+                    el.classList.add("active");
                 }
-            }
+            });
         }
-
-        // Initial check
         reveal();
 
-        // Form Logic
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            this.innerHTML = `<h3 style="color: var(--accent-primary)">Xabaringiz yuborildi! Rahmat.</h3>`;
+        // Django bilan ishlash uchun JavaScript tuzatildi:
+        // Agar siz ma'lumotlarni serverga (views.py) yubormoqchi bo'lsangiz,
+        // e.preventDefault() ni olib tashlashingiz kerak yoki AJAX ishlatishingiz kerak.
+
+        /* DIQQAT: Agar siz formani Django orqali yuborayotgan bo'lsangiz,
+        pastdagi JavaScript kodini o'chirib qo'yganingiz ma'qul,
+        chunki u sahifa yangilanishini to'xtatib qo'yadi.
+        */
+
+        // Agar AJAX bilan yubormoqchi bo'lsangiz (sahifa yangilanmasligi uchun):
+        /*
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', function(e) {
+            // e.preventDefault(); // Bu qator o'chirildi, shunda Django formani qabul qiladi
         });
+        */
     </script>
 </body>
 </html>
